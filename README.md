@@ -12,4 +12,4 @@ Course on LinkedIn Learning by Meaghan Lewis.
 - Selenium
 - Test Automation
 
-[Screenshot](/Screenshot.png)
+![Screenshot](/Screenshot.png)
