@@ -41,13 +41,9 @@ describe "Blog application" do
   		driver.navigate.to "https://selenium-blog.herokuapp.com/signup"
   		# Fill out and submit form
   		enter_username(username)
-
   		enter_email(email)
-
   		enter_password(password)
-
 		submit_form()
-
   		# Confirm user is signed up successfully
   		banner_text = get_banner_text()
   		expect(banner_text).to eq(expected_banner_text)
