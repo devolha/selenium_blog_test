@@ -1,17 +1,12 @@
 require "selenium-webdriver"
 require "rspec"
+require_relative "signup_page.rb"
 
 timestamp = Time.now.to_i
 username = "user #{timestamp}"
 email = "user#{timestamp}@test.com"
 password = "password"
 expected_banner_text = "Welcome to the alpha blog user #{timestamp}"
-
-
-def get_banner_text()
-	banner = @driver.find_element(id: 'flash_success')
-  	banner_text = banner.text
-end
 
 # TEST: Sign up for blog
 describe "Blog application" do
@@ -21,10 +16,11 @@ describe "Blog application" do
   		# Go to signup form
   		@driver.navigate.to "https://selenium-blog.herokuapp.com/signup"
   		# Fill out and submit form
-  		enter_username(username)
-  		enter_email(email)
-  		enter_password(password)
-		submit_form()
+		signup = SignupPage.new(@driver)
+  		signup.enter_username(username)
+  		signup.enter_email(email)
+  		signup.enter_password(password)
+		signup.submit_form()
   		# Confirm user is signed up successfully
   		banner_text = get_banner_text()
   		expect(banner_text).to eq(expected_banner_text)
