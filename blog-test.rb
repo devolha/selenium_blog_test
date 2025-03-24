@@ -1,9 +1,12 @@
 require "selenium-webdriver"
 require "rspec"
 
+timestamp = Time.now.to_i
 username = "user #{timestamp}"
 email = "user#{timestamp}@test.com"
 password = "password"
+expected_banner_text = "Welcome to the alpha blog user #{timestamp}"
+
 # TEST: Sign up for blog
 describe "Blog application" do
   describe "signup to the blog application" do
@@ -27,7 +30,7 @@ describe "Blog application" do
   		# Confirm user is signed up successfully
   		banner = driver.find_element(id: 'flash_success')
   		banner_text = banner.text
-  		expect(banner_text).to eq("Welcome to the alpha blog user")
+  		expect(banner_text).to eq(expected_banner_text)
 
   		driver.quit
 	  end
