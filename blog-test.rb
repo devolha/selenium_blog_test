@@ -2,6 +2,7 @@ require "selenium-webdriver"
 require "rspec"
 
 username = "user #{timestamp}"
+email = "user#{timestamp}@test.com"
 # TEST: Sign up for blog
 describe "Blog application" do
   describe "signup to the blog application" do
@@ -14,7 +15,7 @@ describe "Blog application" do
   		username_field.send_keys(username)
 
   		email_field = driver.find_element(id: 'user_email')
-  		email_field.send_keys("user@test.com")
+  		email_field.send_keys(email)
 
   		password_field = driver.find_element(id: 'user_password')
   		password_field.send_keys("password")
