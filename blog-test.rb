@@ -1,6 +1,7 @@
 require "selenium-webdriver"
 require "rspec"
 
+username = "user #{timestamp}"
 # TEST: Sign up for blog
 describe "Blog application" do
   describe "signup to the blog application" do
@@ -10,7 +11,7 @@ describe "Blog application" do
   		driver.navigate.to "https://selenium-blog.herokuapp.com/signup"
   		# Fill out and submit form
   		username_field = driver.find_element(id: 'user_username')
-  		username_field.send_keys("user")
+  		username_field.send_keys(username)
 
   		email_field = driver.find_element(id: 'user_email')
   		email_field.send_keys("user@test.com")
