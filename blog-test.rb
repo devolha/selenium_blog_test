@@ -24,7 +24,7 @@ describe "Blog application" do
 		signup.submit_form()
   		# Confirm user is signed up successfully
   		users = UsersPage.new(@driver)
-		users.get_banner_text()
+		banner_text = users.get_banner_text()
   		expect(banner_text).to eq(expected_banner_text)
   		@driver.quit
 	  end
