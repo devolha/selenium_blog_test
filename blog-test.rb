@@ -1,6 +1,7 @@
 require "selenium-webdriver"
 require "rspec"
 require_relative "signup_page.rb"
+require_relative "users_page.rb"
 
 timestamp = Time.now.to_i
 username = "user #{timestamp}"
@@ -22,9 +23,9 @@ describe "Blog application" do
   		signup.enter_password(password)
 		signup.submit_form()
   		# Confirm user is signed up successfully
-  		banner_text = get_banner_text()
+  		users = UsersPage.new(@driver)
+		users.get_banner_text()
   		expect(banner_text).to eq(expected_banner_text)
-
   		@driver.quit
 	  end
   end
