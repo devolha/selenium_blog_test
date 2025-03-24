@@ -7,6 +7,7 @@ Course on LinkedIn Learning by Meaghan Lewis.
 - Set up Selenium WebDriver, gems, Selenium Grid (remote hub and nodes)
 - Write clean test code using Ruby
 - Organizing a test suite
+- Get familiar with Ruby programming language by using [Try Ruby](https://try.ruby-lang.org/about/)
 
 ### Skills covered:
 - Selenium
