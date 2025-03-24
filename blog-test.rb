@@ -3,6 +3,7 @@ require "rspec"
 
 username = "user #{timestamp}"
 email = "user#{timestamp}@test.com"
+password = "password"
 # TEST: Sign up for blog
 describe "Blog application" do
   describe "signup to the blog application" do
@@ -18,7 +19,7 @@ describe "Blog application" do
   		email_field.send_keys(email)
 
   		password_field = driver.find_element(id: 'user_password')
-  		password_field.send_keys("password")
+  		password_field.send_keys(password)
 
   		sign_up_button = driver.find_element(id: 'submit')
   		sign_up_button.click
